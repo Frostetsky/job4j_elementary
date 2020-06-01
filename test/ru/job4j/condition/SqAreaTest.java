@@ -4,17 +4,32 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SqAreaTest {
-
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void square() {
-        double rsl1 = SqArea.square(4,-1);
-        double rsl2 = SqArea.square(2,0);
-        double rsl3 = SqArea.square(-5,2);
-        double rsl4 = SqArea.square(0,3);
         int p = 4;
         int k = 1;
         int expected = 1;
-        double rsl5 = SqArea.square(4,1);
-        Assert.assertEquals(expected,rsl5,1e-5);
+        double rsl = SqArea.square(4,1);
+        Assert.assertEquals(expected,rsl,1e-5);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void negativeCoefficient() {
+        double rsl = SqArea.square(4,-1);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void zeroCoefficient() {
+        double rsl = SqArea.square(2,0);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void negativePerimeter() {
+        double rsl = SqArea.square(-5,2);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void zeroPerimeter() {
+        double rsl = SqArea.square(0,3);
     }
 }
