@@ -10,8 +10,7 @@ public class Board {
                     } else {
                         System.out.print(" ");
                     }
-                }
-                else {
+                } else {
                     if (row % 2 != 0) {
                         System.out.print("X");
                     } else {
