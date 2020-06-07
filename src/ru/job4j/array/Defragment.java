@@ -9,7 +9,7 @@ public class Defragment {
                         swap(array, index1, point2);
                     }
                 }
-            }
+        }
         return array;
     }
 
