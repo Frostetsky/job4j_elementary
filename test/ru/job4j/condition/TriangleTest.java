@@ -1,37 +1,22 @@
 package ru.job4j.condition;
 
+import org.junit.Assert;
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 
 public class TriangleTest {
     @Test
-    public void whenExist() {
-        boolean result = Triangle.exist(2.0, 2.0, 2.0);
-        assertThat(result, is(true));
+    public void whenArea5n99() {
+        Triangle triangle1 = new Triangle(new Point(-1, 3), new Point(-2, -1), new Point(2, 3));
+        double out = triangle1.area();
+        double expected = 6;
+        Assert.assertEquals(expected, out, 1e-05);
     }
 
     @Test
-    public void negativeLength() {
-        boolean result = Triangle.exist(-1,2,5);
-        assertThat(result,is(false));
-    }
-
-    @Test
-    public void zeroLength() {
-        boolean result = Triangle.exist(0,2,0);
-        assertThat(result,is(false));
-    }
-
-    @Test
-    public void normalTriangle() {
-        boolean result = Triangle.exist(3,4,5);
-        assertThat(result,is(true));
-    }
-
-    @Test
-    public void nonexistentTriangle() {
-        boolean result = Triangle.exist(1,3,5);
-        assertThat(result,is(false));
+    public void whenAreaNegative1() {
+        Triangle triangle2 = new Triangle(new Point(0, 0), new Point(0, 0), new Point(1,0));
+        double out = triangle2.area();
+        double expected = -1;
+        Assert.assertEquals(expected, out, 1e-05);
     }
 }
