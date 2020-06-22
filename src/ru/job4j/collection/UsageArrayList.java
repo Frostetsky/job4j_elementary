@@ -8,8 +8,8 @@ public class UsageArrayList {
         list.add("Petr");
         list.add("Ivan");
         list.add("Stepan");
-        for (String listElement : list) {
-            System.out.println(listElement);
+        for (String elementList : list) {
+            System.out.println(elementList);
         }
     }
 }
