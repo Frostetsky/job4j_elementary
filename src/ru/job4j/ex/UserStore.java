@@ -7,18 +7,22 @@ public class UserStore {
         for (User elementUser : users) {
             if (elementUser.getUsername().equals(login)) {
                 user = elementUser;
+                break;
             }
         }
         if (user == null) {
-            throw new UserNotFoundException();
+            throw new UserNotFoundException("User not found");
         }
         return user;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (!user.isValid() || user.getUsername().length() < 3) {
-            throw new UserInvalidException();
+        if (!user.isValid()) {
+            throw new UserInvalidException("User not validate");
+        } else if (user.getUsername().length() < 3) {
+            throw new UserInvalidException("Username less than three characters");
         }
+
         return false;
     }
 
@@ -31,10 +35,8 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserInvalidException e) {
-            System.out.println("User is not validate");
         } catch (UserNotFoundException e) {
-            System.out.println("User not found");
+            e.printStackTrace();
         }
     }
 }
