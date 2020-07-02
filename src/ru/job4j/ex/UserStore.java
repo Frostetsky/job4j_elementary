@@ -23,7 +23,7 @@ public class UserStore {
             throw new UserInvalidException("Username less than three characters");
         }
 
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
