@@ -1,10 +1,10 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-import java.util.Comparator;
 
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.lessThan;
+import java.util.*;
+
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class JobTest {
@@ -20,12 +20,22 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriorityAsc() {
-        Comparator<Job> cmpNamePriority = new JobAscByPriority().thenComparing(new JobAscByPriority());
-        int rsl = cmpNamePriority.compare(
-                new Job("Sergey", 0),
-                new Job("Vadim", 1)
-        );
-        assertThat(rsl, lessThan(0));
+        Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
+        ArrayList<Job> list = new ArrayList<>();
+        Job job1 = new Job("Task", 2);
+        Job job2 = new Job("Task", 3);
+        Job job3 = new Job("Task", 1);
+        Job job4 = new Job("NewTask", 0);
+        list.add(job1);
+        list.add(job2);
+        list.add(job3);
+        list.add(job4);
+        Collections.sort(list,cmpNamePriority);
+        Iterator<Job> iterator = list.iterator();
+        assertThat(iterator.next(), is(job4));
+        assertThat(iterator.next(), is(job3));
+        assertThat(iterator.next(), is(job1));
+        assertThat(iterator.next(), is(job2));
     }
 
     @Test
