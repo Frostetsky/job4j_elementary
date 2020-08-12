@@ -12,6 +12,7 @@ public class Article {
         for (int i = 0; i < array2.length; i++) {
             if (!set.contains(array2[i])) {
                 result = false;
+                break;
             }
         }
         return result;
