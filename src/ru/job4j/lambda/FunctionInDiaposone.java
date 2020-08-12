@@ -15,8 +15,8 @@ public class FunctionInDiaposone {
 
     List<Double> diapason(int start, int end, UnaryOperator<Double> func) {
         List<Double> functionvalues = new ArrayList<>();
-        for (double X = start; X < end; X++) {
-            functionvalues.add(func.apply(X));
+        for (double x = start; x < end; x++) {
+            functionvalues.add(func.apply(x));
         }
         return functionvalues;
     }
