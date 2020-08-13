@@ -17,19 +17,17 @@ public class BankService {
         if (user == null) {
             return;
         }
-        for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
-            if (entry.getKey().equals(user) && !entry.getValue().contains(account)) {
-                entry.getValue().add(account);
-                break;
-            }
+        List<Account> accounts = users.get(user);
+        if (!accounts.contains(account)) {
+            accounts.add(account);
         }
     }
 
     public User findByPassport(String passport) {
         User user = null;
-        for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
-            if (entry.getKey().getPassport().equals(passport)) {
-                user = entry.getKey();
+        for (User  useri:  users.keySet()) {
+            if (useri.getPassport().equals(passport)) {
+                user = useri;
                 break;
             }
         }
