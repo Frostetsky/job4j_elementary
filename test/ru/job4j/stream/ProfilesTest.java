@@ -21,4 +21,16 @@ public class ProfilesTest {
         List<Address> result = new Profiles().collect(profiles);
         assertThat(expected, is(result));
     }
+
+    @Test
+    public void whenPutAddressClient() {
+        List<Address> expected = new ArrayList<>();
+        List<Profile> profiles = new ArrayList<>();
+        profiles.add(new Profile(new Address("Saratov","Shelkovichnaya",6,34)));
+        profiles.add(new Profile(new Address("St.Petersburg","Chernogorskaya",23,146)));
+        expected.add(new Address("Saratov","Shelkovichnaya",6,34));
+        expected.add(new Address("St.Petersburg","Chernogorskaya",23,146));
+        List<Address> result = new Profiles().collect(profiles);
+        assertThat(expected, is(result));
+    }
 }
