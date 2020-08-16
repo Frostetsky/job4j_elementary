@@ -28,7 +28,6 @@ public class CollectorsToMapTest {
                                                                new Student("Mike",30)));
         Map<String,Integer> expected = new HashMap<>();
         expected.put("John",80);
-        expected.put("John",60);
         expected.put("Mike",30);
         Map<String,Integer> result = new CollectorsToMap().collect(otherstu);
         assertThat(expected, is(result));

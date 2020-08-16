@@ -16,7 +16,7 @@ public class CollectorsToMap {
                                                   .collect(Collectors.toMap(
                                                            Student::getSurname,
                                                            Student::getScore,
-                                                           (surname,score) -> score
+                                                           (o1,o2) -> o1
                                                   ));
         return mapstudents;
     }
