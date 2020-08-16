@@ -8,23 +8,19 @@ public class Matches {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int player1 = 0;
-        int player2 = 0;
-        while (true) {
-            System.out.println("Ходит игрок №1. Введите кол-во спичек от 1 до 3.");
-            String mathcesplayer1 = scanner.next();
-            player1 = Integer.parseInt(mathcesplayer1);
-            if (player1 < 1 || player1 > 3) { System.out.println("Игрок №1 сжулничал. Техническая победа игроку №2"); break; }
-            matches -= player1;
+        boolean isFirst = true;
+        int player = 0;
+        do {
+            if (matches <= player) { System.out.println("Возьми оставшиеся спички"); }
+            System.out.println("Ходит игрок № " + (isFirst ? "1" : "2") + "." + " Введите кол-во спичек от 1 до 3.");
+            String mathcesplayer = scanner.next();
+            player = Integer.parseInt(mathcesplayer);
+            if (player < 1 || player > 3) { System.out.println("Игрок № " + (isFirst ? "1" : "2") + "сжулничал. "
+                                                + "Техническая победа игроку № " + (isFirst ? "1" : "2")); break; }
+            matches -= player;
             System.out.println("Количество оставшихся спичек " + matches);
-            if (matches <= 0) { System.out.println("Игрок №1 победил"); break; }
-            System.out.println("Ходит игрок №2. Введите кол-во спичек от 1 до 3.");
-            String mathcesplayer2 = scanner.next();
-            player2 = Integer.parseInt(mathcesplayer2);
-            if (player2 < 1 || player2 > 3) { System.out.println("Игрок №2 сжулничал. Техническая победа игроку №1"); break; }
-            matches -= player2;
-            System.out.println("Количество оставшихся спичек " + matches);
-            if (matches <= 0) { System.out.println("Игрок №2 победил"); break; }
-        }
+            if (matches <= 0) { System.out.println("Игрок № " + (isFirst ? "1" : "2") + " победил"); break; }
+            isFirst = !isFirst;
+        } while (matches > 0);
     }
 }
