@@ -21,9 +21,9 @@ public class PhoneDictionary {
         Predicate<Person> combine3 = person -> person.getName().equals(key);
         Predicate<Person> combine4 = person -> person.getSurname().equals(key);
         ArrayList<Person> result = new ArrayList<>();
-        for (int i = 0; i < persons.size(); i++) {
-            if (combine1.or(combine2).or(combine3).or(combine4).test(persons.get(i))) {
-                result.add(persons.get(i));
+        for (var person : persons) {
+            if (combine1.or(combine2).or(combine3).or(combine4).test(person)) {
+                result.add(person);
             }
         }
         return result;
