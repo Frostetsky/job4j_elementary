@@ -1,6 +1,8 @@
 package ru.job4j.stream;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 enum Suit {
     Diamonds, Hearts, Spades, Clubs
@@ -28,10 +30,6 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        for (Suit suit : Suit.values()) {
-            for (Value value : Value.values()) {
-                cards.add(new Card(suit, value));
-            }
-        }
+        cards = Stream.of(Suit.values()).map(s -> Stream.of(Value.values())).map((v) -> new Card(s,v)).collect(Collectors.toSet());
     }
 }
