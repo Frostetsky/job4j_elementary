@@ -14,8 +14,6 @@ enum Value {
 
 public class Card {
 
-    private static final Set<Card> cards = new HashSet<>();
-
     private Suit suit;
     private Value value;
 
@@ -30,6 +28,10 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        cards = Stream.of(Suit.values()).map(s -> Stream.of(Value.values())).map((v) -> new Card(s,v)).collect(Collectors.toSet());
+                        Stream.of(Suit.values())
+                        .map(s -> Stream.of(Value.values())
+                        .map(v -> new Card(s, v))
+                        .collect(Collectors.toSet())).forEach(System.out::println);
+
     }
 }
