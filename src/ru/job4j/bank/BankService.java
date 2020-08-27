@@ -11,34 +11,28 @@ public class BankService {
 
     public void addAccount(String passport, Account account) {
         Optional<User> user = findByPassport(passport);
-        if (user.isEmpty()) {
-            System.out.println("User not found");
-        }
-        List<Account> accounts = users.get(user.get());
-        if (!accounts.contains(account)) {
-            accounts.add(account);
+        if (user.isPresent()) {
+            List<Account> accounts = users.get(user.get());
+            if (!accounts.contains(account)) {
+                accounts.add(account);
+            }
         }
     }
 
     public Optional<User> findByPassport(String passport) {
-        Optional<User> useri = users.keySet().stream()
+        return users.keySet().stream()
                              .filter(user -> user.getPassport().equals(passport))
                              .findFirst();
-        if (useri.isEmpty()) {
-            System.out.println("User not found");
-        }
-        return useri;
     }
 
     public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional<User> user = findByPassport(passport);
-        Optional<Account> myAccount = users.get(user.get()).stream()
-                                            .filter(account -> account.getRequisite().equals(requisite))
-                                            .findFirst();
-        if (myAccount.isEmpty()) {
-            System.out.println("Account not found");
+        if (user.isEmpty()) {
+            return Optional.empty();
         }
-        return myAccount;
+        return  users.get(user.get()).stream()
+                .filter(account -> account.getRequisite().equals(requisite))
+                .findFirst();
     }
 
     /**

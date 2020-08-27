@@ -1,8 +1,10 @@
 package ru.job4j.bank;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -17,13 +19,13 @@ public class BankServiceTest {
         assertThat(bank.findByPassport("3434").get(), is(user));
     }
 
-    @Test (expected = NoSuchElementException.class)
+    @Test
     public void whenEnterInvalidPassport() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        bank.findByRequisite("34", "5546");
+        assertThat(bank.findByRequisite("34", "5546"), is(Optional.empty()));
     }
 
     @Test
