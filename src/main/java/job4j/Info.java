@@ -1,4 +1,4 @@
-package ru.job4j;
+package job4j;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

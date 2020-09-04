@@ -1,4 +1,4 @@
-package ru.job4j.io;
+package job4j.io;
 
 import java.util.Scanner;
 

@@ -1,8 +1,6 @@
 package job4j.search;
 
 import org.junit.Test;
-import ru.job4j.search.PriorityQueue;
-import ru.job4j.search.Task;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

@@ -1,4 +1,4 @@
-package ru.job4j.professions;
+package job4j.professions;
 
 public class Pacient {
 }

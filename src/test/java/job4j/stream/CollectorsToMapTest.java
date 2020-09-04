@@ -1,14 +1,11 @@
 package job4j.stream;
 
 import org.junit.Test;
-import ru.job4j.stream.CollectorsToMap;
-import ru.job4j.stream.Student;
-
 import java.util.*;
 
+import static job4j.stream.CollectorsToMap.students;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
-import static ru.job4j.stream.CollectorsToMap.students;
 
 public class CollectorsToMapTest {
 

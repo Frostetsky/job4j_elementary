@@ -1,4 +1,4 @@
-package ru.job4j.stragery;
+package job4j.stragery;
 
 public class Triangle implements Shape {
     @Override

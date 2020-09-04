@@ -1,4 +1,4 @@
-package ru.job4j.converter;
+package job4j.converter;
 
 /**
  * Class Converter решение задачи блока "Базовый синтакс".

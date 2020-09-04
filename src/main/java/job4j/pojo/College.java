@@ -1,4 +1,4 @@
-package ru.job4j.pojo;
+package job4j.pojo;
 
 public class College {
     public static void main(String[] args) {

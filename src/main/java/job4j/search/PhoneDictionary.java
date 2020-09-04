@@ -1,4 +1,4 @@
-package ru.job4j.search;
+package job4j.search;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;

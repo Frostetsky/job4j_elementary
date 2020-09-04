@@ -1,4 +1,4 @@
-package ru.job4j.array;
+package job4j.array;
 
 public class Min {
     public static int findMin(int[] array) {

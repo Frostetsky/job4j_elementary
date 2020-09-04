@@ -1,7 +1,6 @@
 package job4j.loop;
 
 import org.junit.Test;
-import ru.job4j.loop.Mortgage;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;

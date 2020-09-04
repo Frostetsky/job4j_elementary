@@ -1,8 +1,7 @@
 package job4j.lambda;
 
 import org.junit.Test;
-import ru.job4j.lambda.Attachment;
-import ru.job4j.lambda.SearchAtt;
+
 
 import java.util.ArrayList;
 import java.util.List;

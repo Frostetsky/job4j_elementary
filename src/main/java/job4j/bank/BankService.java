@@ -1,4 +1,4 @@
-package ru.job4j.bank;
+package job4j.bank;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package job4j.oop;
 
 public class Dog {
     Dog polkan = new Dog();

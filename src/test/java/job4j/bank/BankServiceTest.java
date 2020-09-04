@@ -1,9 +1,6 @@
 package job4j.bank;
 
 import org.junit.Test;
-import ru.job4j.bank.Account;
-import ru.job4j.bank.BankService;
-import ru.job4j.bank.User;
 
 import java.util.Optional;
 

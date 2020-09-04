@@ -2,7 +2,6 @@ package job4j.array;
 
 
 import org.junit.Test;
-import ru.job4j.array.SwitchArray;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

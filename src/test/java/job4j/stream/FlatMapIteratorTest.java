@@ -1,7 +1,6 @@
 package job4j.stream;
 
 import org.junit.Test;
-import ru.job4j.stream.FlatMapIterator;
 
 import java.util.Iterator;
 import java.util.List;

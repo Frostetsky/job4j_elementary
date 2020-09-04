@@ -1,7 +1,6 @@
 package job4j.lambda;
 
 import org.junit.Test;
-import ru.job4j.lambda.FunctionInDiaposone;
 
 import java.util.Arrays;
 import java.util.List;

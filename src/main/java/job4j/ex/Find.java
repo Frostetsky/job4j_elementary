@@ -1,4 +1,4 @@
-package ru.job4j.ex;
+package job4j.ex;
 
 public class Find {
     public static String get(String[] data, int index) {

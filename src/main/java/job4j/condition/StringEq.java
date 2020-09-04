@@ -1,4 +1,4 @@
-package ru.job4j.condition;
+package job4j.condition;
 
 public class StringEq {
     public static boolean check(String login) {

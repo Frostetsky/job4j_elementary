@@ -1,8 +1,8 @@
-package ru.job4j.professions;
+package job4j.professions;
 
 public class Builder extends Engineer {
     @Override
-    public void projectImplementation(Project project) {
+    public void projectImplementation( Project project) {
 
     }
 
