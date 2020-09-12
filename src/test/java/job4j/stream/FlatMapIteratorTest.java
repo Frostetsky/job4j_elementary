@@ -20,4 +20,16 @@ public class FlatMapIteratorTest {
                 is(List.of(1, 2, 3))
         );
     }
+
+    @Test
+    public void whenIt2() {
+        Iterator<Iterator<Integer>> it = List.of(
+                List.of(1).iterator(),
+                List.of(2, 4).iterator(),
+                List.of(3, 5).iterator()
+        ).iterator();
+        assertThat(
+                FlatMapIterator.flatten(it), is(List.of(1, 2, 4, 3, 5))
+        );
+    }
 }
