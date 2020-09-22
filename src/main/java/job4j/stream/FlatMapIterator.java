@@ -8,9 +8,10 @@ public class FlatMapIterator {
     public static List<Integer> flatten(Iterator<Iterator<Integer>> it) {
         return  StreamSupport.stream(
                 Spliterators.spliteratorUnknownSize(it, Spliterator.ORDERED),
-                false).flatMap(x -> StreamSupport.stream(
+                false)
+                .flatMap(x -> StreamSupport.stream(
                 Spliterators.spliteratorUnknownSize(x, Spliterator.ORDERED),
-                false)).collect(Collectors.toList());
+                false))
+                .collect(Collectors.toList());
     }
-
 }
